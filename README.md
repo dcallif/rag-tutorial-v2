@@ -1,1 +1,4 @@
-# rag-tutorial-v2
+# rag-pdfs
+
+Parses PDFs in data directory into chroma DB.
+

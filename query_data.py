@@ -1,7 +1,6 @@
-import argparse
-from langchain.vectorstores.chroma import Chroma
+from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
-from langchain_community.llms.ollama import Ollama
+from langchain_ollama import OllamaLLM as Ollama
 
 from get_embedding_function import get_embedding_function
 
@@ -20,10 +19,7 @@ Answer the question based on the above context: {question}
 
 def main():
     # Create CLI.
-    parser = argparse.ArgumentParser()
-    parser.add_argument("query_text", type=str, help="The query text.")
-    args = parser.parse_args()
-    query_text = args.query_text
+    query_text = "How do you win in Monopoly?"  # Generic question
     query_rag(query_text)
 
 

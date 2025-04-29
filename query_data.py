@@ -18,9 +18,22 @@ Answer the question based on the above context: {question}
 
 
 def main():
-    # Create CLI.
-    query_text = "How do you win in Monopoly?"  # Generic question
-    query_rag(query_text)
+    # Create interactive CLI that continues until Ctrl+C is pressed
+    print("RAG Query System - Press Ctrl+C to exit")
+    print("----------------------------------------")
+    
+    try:
+        while True:
+            query_text = input("\nEnter your question: ")
+            if not query_text.strip():
+                print("Please enter a valid question.")
+                continue
+                
+            print("\nProcessing your question...\n")
+            query_rag(query_text)
+            print("\n----------------------------------------")
+    except KeyboardInterrupt:
+        print("\n\nExiting. Thank you for using the RAG Query System!")
 
 
 def query_rag(query_text: str):
